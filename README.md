@@ -1,2 +1,3 @@
-# Darpit_Makwana_Portfolio
+# Darpit's Portfolio Website
+
 This is Darpit's portfolio website.
