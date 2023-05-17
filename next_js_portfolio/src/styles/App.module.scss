@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import './variables.modules';
 
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 1.5vh;
   width: 100%;
   height: 100%;
-  color: #1f1f1f;
-  background-color: #f8f8f8;
+  color: $dark;
+  background-color: $white;
   box-sizing: border-box;
 }
 
 li {
-  color: #1f1f1f;
+  color: $dark;
 }
 
 * {
