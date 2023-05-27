@@ -5,6 +5,7 @@ import { info } from '../../pages/api/Info';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Toggler from '../HomePage/Toggler';
+import { transform, transition } from '@/utils/constents';
 
 const links = [
   {
@@ -47,7 +48,7 @@ export default function Navbar() {
         justifyContent={'center'}
         alignItems={'center'}
         gap={{ xs: '2rem', md: '8rem' }}
-        textTransform={'lowercase'}
+        textTransform={'capitalize'}
         fontSize={'1rem'}
       >
         {links.map((link, index) => (
@@ -55,33 +56,36 @@ export default function Navbar() {
             key={index}
             component={'li'}
             className={link.active === active && !link.type && Style.active}
-            sx={{ borderImageSource: info.gradient }}
+            sx={{
+              borderImageSource: info.gradient,
+              ':hover': {
+                transform: transform,
+                transition: transition,
+                color: info.gradient,
+              },
+            }}
           >
             <Link
               href={link.to}
               onClick={() => setActive(link.active)}
               className={Style.link}
             >
-              {!link.type && (
-                <p style={{ padding: '0.5rem 0', textTransform: 'capitalize' }}>
-                  {link.name}
-                </p>
-              )}
-              {/* {link.type && <h1>{link.name}</h1>} */}
+              {!link.type && <p style={{ padding: '0.5rem 0' }}>{link.name}</p>}
+
               {/* {link.type && (
                 <img src={link.name} style={{ maxWidth: '75px' }}></img>
               )} */}
+
               {link.type && (
-                <h2
+                <h1
                   style={{
                     background: info.gradient,
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    textTransform: 'uppercase',
                   }}
                 >
                   {link.name}
-                </h2>
+                </h1>
               )}
             </Link>
           </Box>

@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { Box } from '@mui/material';
 import { DarkModeContext } from '@/context';
+import { transform, transition } from '@/utils/constents';
 
 export default function Toggler() {
-  const transition = 'all 250ms ease';
-
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   return (
@@ -12,7 +11,7 @@ export default function Toggler() {
       fontSize={'1.5rem'}
       sx={{
         cursor: 'pointer',
-        ':hover': { transform: 'translateY(-3px)', transition: transition },
+        ':hover': { transform: transform, transition: transition },
       }}
     >
       {darkMode ? (
