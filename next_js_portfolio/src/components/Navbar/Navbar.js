@@ -61,7 +61,6 @@ export default function Navbar() {
               ':hover': {
                 transform: transform,
                 transition: transition,
-                color: info.gradient,
               },
             }}
           >

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { Inter } from 'next/font/google';
 import Style from '@/styles/Home.module.scss';
 import { Box } from '@mui/material';
 import classNames from 'classnames';
@@ -8,8 +7,6 @@ import me from '../images/self-1.png';
 import EmojiBullet from '@/components/HomePage/EmojiBullet';
 import SocialIcon from '@/components/HomePage/SocialIcon';
 import Image from 'next/image';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -29,6 +26,7 @@ export default function Home() {
           alignItems={'center'}
           justifyContent={'center'}
           minHeight={'calc(100vh - 175px)'}
+          textTransform={'capitalize'}
         >
           <Box
             className={classNames(Style.avatar, Style.shadowed)}
@@ -59,11 +57,13 @@ export default function Home() {
             </h1>
             <br />
             <h2 className={Style.h2}>I'm {info.position}.</h2>
+
             <Box component={'ul'} p={'0.8rem'}>
               {info.miniBio.map((bio, index) => (
                 <EmojiBullet key={index} emoji={bio.emoji} text={bio.text} />
               ))}
             </Box>
+
             <Box
               display={'flex'}
               gap={'2rem'}

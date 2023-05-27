@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import { transform, transition } from '@/utils/constents';
 
 function EmojiBullet(props) {
   const { emoji, text } = props;
@@ -10,6 +11,12 @@ function EmojiBullet(props) {
       fontSize={'1rem'}
       lineHeight={1.5}
       style={{ cursor: 'default' }}
+      sx={{
+        ':hover': {
+          transform: transform,
+          transition: transition,
+        },
+      }}
     >
       <Box
         component={'span'}
